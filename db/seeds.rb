@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts 'SETTING UP DEFAULT USER LOGIN'
+device = LiteraryDevice.create! :name => 'metaphor', :description => "Describing something in terms of what its not."
+puts 'Set up first literary device!'
+region = BrainRegion.create! :name => "right wernicke's area"
+puts "set up first brain region"
+a = Association.new
+a.literary_device = device
+a.brain_region = region
+a.save
+

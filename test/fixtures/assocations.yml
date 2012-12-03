@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brain_region: 
+  literary_device: 
+
+two:
+  brain_region: 
+  literary_device: 
