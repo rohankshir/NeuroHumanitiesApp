@@ -1,5 +1,5 @@
 NeurohumanitiesApp::Application.routes.draw do
-  resources :posts
 
-  root :to => "home#index"
+  root :to => "literary_devices#index"
+  resources :literary_devices
 end
