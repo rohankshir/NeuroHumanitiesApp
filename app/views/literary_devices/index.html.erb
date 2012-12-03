@@ -1,6 +1,13 @@
+
+<dl>
 <% @devices.each do |device| %>
-<p>
-	<%= link_to device.name, device %>
-</p>
+<dt><%=device.name %></dt>
+<dd><%=device.description%></dd>
+<br>
+<dd><%= button_to('More info', literary_device_path(device), :class => 'btn btn-primary btn-small', :method => :get)  %></dd>
+
+<br>
 <% end %>
-<button type="button" class="btn" data-toggle="button">Single Toggle</button>
+</dl>
+
+
