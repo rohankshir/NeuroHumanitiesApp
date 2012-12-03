@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 gem "thin", ">= 1.5.0", :group => :production
 gem "bootstrap-sass", ">= 2.1.1.0"
+gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
