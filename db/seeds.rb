@@ -5,13 +5,45 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts 'SETTING UP DEFAULT USER LOGIN'
-device = LiteraryDevice.create! :name => 'metaphor', :description => "Describing something in terms of what its not."
-puts 'Set up first literary device!'
-region = BrainRegion.create! :name => "right wernicke's area"
-puts "set up first brain region"
-a = Association.new
-a.literary_device = device
-a.brain_region = region
-a.save
 
+metaphor = LiteraryDevice.create(name: 'metaphor', description: 'A figure of speech in which a word or phrase is applied to an object or action to which it is not literally applicable.')
+simile = LiteraryDevice.create(name: 'simile', description: 'A figure of speech that directly compares two different things, usually by employing the words "like" or "as".')
+irony = LiteraryDevice.create(name: 'irony', description: 'The expression of ones meaning by using language that normally signifies the opposite, typically for humorous or emphatic effect.')
+humor = LiteraryDevice.create(name: 'humor', description: 'The quality of being amusing or comic, esp. as expressed in literature or speech.')
+idiom = LiteraryDevice.create(name: 'idiom', description: 'A group of words established by usage as having a meaning not deducible from those of the individual words')
+
+lifg = BrainRegion.create(name: "Left Inferior Frontal Gyrus")
+bitc = BrainRegion.create(name: "Bilateral Inferior Temporal Cortex")
+rstg = BrainRegion.create(name: "Right Superior Temporal Gyrus")
+mtg = BrainRegion.create(name: "Middle Temporal Gyri")
+lfl = BrainRegion.create(name: "Left Frontal Region")
+rpf = BrainRegion.create(name: "Right Prefrontal Cortex")
+mfl = BrainRegion.create(name: "Medial Frontal Region")
+mfg = BrainRegion.create(name: "Middle Frontal Gyrus")
+rmfg = BrainRegion.create(name: "Right Middle Frontal Gyrus")
+stg = BrainRegion.create(name: "Superior Temporal Gyrus")
+rifg = BrainRegion.create(name: "Right Inferior Frontal Gyrus")
+lstg = BrainRegion.create(name: "Left Superior Temporal Gyrus")
+lmtg = BrainRegion.create(name: "Left Middle Temporal Gyrus")
+rmtg = BrainRegion.create(name: "Right Middle Temporal Gyrus")
+lc = BrainRegion.create(name: "Left Cerebellum")
+rp = BrainRegion.create(name: "Right Precuneus")
+
+Association.create(literary_device_id: metaphor.id, brain_region_id: lifg.id)
+Association.create(literary_device_id: metaphor.id, brain_region_id: bitc.id)
+Association.create(literary_device_id: metaphor.id, brain_region_id: rstg.id)
+Association.create(literary_device_id: metaphor.id, brain_region_id: mtg.id)
+Association.create(literary_device_id: metaphor.id, brain_region_id: lfl.id)
+Association.create(literary_device_id: metaphor.id, brain_region_id: rpf.id)
+Association.create(literary_device_id: simile.id, brain_region_id: lfl.id)
+Association.create(literary_device_id: simile.id, brain_region_id: mfl.id)
+Association.create(literary_device_id: irony.id, brain_region_id: mtg.id)
+Association.create(literary_device_id: irony.id, brain_region_id: rstg.id)
+Association.create(literary_device_id: idiom.id, brain_region_id: stg.id)
+Association.create(literary_device_id: idiom.id, brain_region_id: rmfg.id)
+Association.create(literary_device_id: idiom.id, brain_region_id: rmtg.id)
+Association.create(literary_device_id: idiom.id, brain_region_id: rp.id)
+Association.create(literary_device_id: humor.id, brain_region_id: rifg.id)
+Association.create(literary_device_id: humor.id, brain_region_id: lstg.id)
+Association.create(literary_device_id: humor.id, brain_region_id: lmtg.id)
+Association.create(literary_device_id: humor.id, brain_region_id: lc.id)
