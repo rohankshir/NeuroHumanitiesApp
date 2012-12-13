@@ -1,13 +1,24 @@
 
-<dl>
-<% @devices.each do |device| %>
-<dt><%=device.name %></dt>
-<dd><%=device.description%></dd>
-<br>
-<dd><%= button_to('More info', literary_device_path(device), :class => 'btn btn-primary btn-small', :method => :get)  %></dd>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <img src="/images/brain.png" class="img-rounded">
+    </div>
+    <div class="span8">
+	    <dl>
+		<% @devices.each do |device| %>
+			<dt><%=device.name %></dt><br>
+			<dd><%=device.description%></dd>
+			<br>
+			<dd><%= button_to('More info', literary_device_path(device), :class => 'btn btn-primary btn-small', :method => :get)  %></dd>
 
-<br>
-<% end %>
-</dl>
+			<br>
+		<% end %>
+		</dl>
+    </div>
+  </div>
+<div style="position: absolute; z-index:100">This is in background</div> 
+<div style="position: absolute; z-index:5000">This is in foreground</div>
+
 
 

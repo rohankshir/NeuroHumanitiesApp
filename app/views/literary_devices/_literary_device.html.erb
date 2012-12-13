@@ -1,32 +1,43 @@
 
-
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span4">
-      <img src="/brain.png" class="img-rounded">
-    </div>
-    <div class="span8">
-	    <h2>
-	  		<%= @device.name %>
-		</h2>
+  	<div class="row-fluid">
+	    <div class="span5" style="position: relative">
+				      	<div style="position: absolute; z-index:100">
+				      		<img src="/images/Lateral(left).png" class="img-rounded">
+				      	</div> 
 
-		<p>
-		  <%= @device.description %>
-		</p>
-		<table class="table table-hover table-striped">
-			<tr>
-				<th>Brain Region</th>
-				<th>Description</th>
-				<th>Resources</th>
-			</tr>
-		<% @brain_regions.each do |region| %>
-			<tr>
-				<td><%=region.name%></td>
-				<td>Insert description of specific association here</td>
-				<td>Link to references </td>
-			</tr>
-		<% end %>
-		</table>
-    </div>
-  </div>
+				      	<% @brain_regions.each do |region| %>
+					      	<% if FileTest.exists?("#{Rails.root}/public/images/left_region/"+ region.id.to_s + ".png") %>
+					      		<% image_path = "/images/left_region/" + region.id.to_s + ".png"  %>
+								<div id="whatever" style="position: absolute; z-index:500" >
+									<img src=<%= image_path%> class="img-rounded">
+								</div>
+							<% end %>
+						<% end %>
+	    </div>
+	    <div class="span7">
+		    <h2>
+		  		<%= @device.name %>
+			</h2>
+
+			<p>
+			  <%= @device.description %>
+			</p>
+			<table class="table table-hover table-striped">
+				<tr>
+					<th>Brain Region</th>
+					<th>Description</th>
+					<th>Resources</th>
+				</tr>
+			<% @brain_regions.each do |region| %>
+				<tr>
+					<td><%=region.name%></td>
+					<td>Insert description of specific association here</td>
+					<td>Link to references </td>
+				</tr>
+			<% end %>
+			</table>
+	    </div>
+	</div>
+</div>
 

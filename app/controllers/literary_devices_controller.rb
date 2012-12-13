@@ -6,5 +6,6 @@ class LiteraryDevicesController < ApplicationController
 	def show
 		@device = LiteraryDevice.find(params[:id])
 		@brain_regions = @device.brain_regions
+		@image_path
 	end
 end
