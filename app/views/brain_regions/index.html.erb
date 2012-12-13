@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Brain Region</th>
+      <th>View</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	<% @brain_regions.each do |region| %>
+	    <tr>
+	      <td><%=region.name%></td>
+	      <td><%= link_to "View Region",region %></td>
+	    </tr>
+    <% end %>
+  </tbody>
+
+</table>

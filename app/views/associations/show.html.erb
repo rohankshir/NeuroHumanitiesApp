@@ -1,0 +1,6 @@
+<h3> References for association between <%=@association.literary_device.name%> and <%=@association.brain_region.name%> </h3>
+<ul>
+<% @citations.each do |citation| %>
+  <li><%= link_to citation.title, citation.link %></li>
+ <% end %>
+</ul>

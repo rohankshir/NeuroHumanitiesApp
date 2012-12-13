@@ -36,21 +36,28 @@
 		    <h2>
 		  		<%= @device.name %>
 			</h2>
-
-			<p>
-			  <%= @device.description %>
-			</p>
+			<div class = "row-fluid">
+				<div class="span6">
+					<strong>Literary Definition</strong>
+					<p>
+					  <%= @device.description %>
+					</p>
+				</div>
+				<div class="span6">
+					<strong>Neurological Description</strong>
+					<p>
+					  <%= @device.description %>
+					</p>
+				</div>
 			<table class="table table-hover table-striped">
 				<tr>
 					<th>Brain Region</th>
-					<th>Description</th>
 					<th>Resources</th>
 				</tr>
-			<% @brain_regions.each do |region| %>
+			<% @associations.each do |association| %>
 				<tr>
-					<td><%=region.name%></td>
-					<td>Insert description of specific association here</td>
-					<td>Link to references </td>
+					<td><%=link_to association.brain_region.name, association.brain_region%></td>
+					<td><%= link_to "View References", association %></td>
 				</tr>
 			<% end %>
 			</table>
