@@ -1,6 +1,13 @@
-
-<div class="span12 pagination-centered">
-	<h3><%=@brain_region.name%><h3>
-	<% path = "/images/brain_regions/" + @brain_region.id.to_s + ".png" %>
-	<img src=<%=path%> class="img-rounded">
+<div class="row-fluid">
+	<div class="span3" style="position:relative; top:250px; left:50px">
+	<%= button_to('Back to all regions', brain_regions_path, :class => 'btn btn-primary btn-large', :method => :get)  %>
+	</div>
+	<div class="span6 pagination-centered">
+		<h3><%=@brain_region.name%><h3>
+		<% path = "/images/brain_regions/" + @brain_region.id.to_s + ".png" %>
+		<img src=<%=path%> class="img-rounded">
+	</div>
+	<div class="span3">'
+		hi
+	</div>
 </div>

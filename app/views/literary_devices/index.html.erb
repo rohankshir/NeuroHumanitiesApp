@@ -7,11 +7,17 @@
     <div class="span8">
 	    <dl>
 		<% @devices.each do |device| %>
-			<dt><%=device.name %></dt><br>
-			<dd><%=device.description%></dd>
-			<br>
-			<dd><%= button_to('More info', literary_device_path(device), :class => 'btn btn-primary btn-small', :method => :get)  %></dd>
-
+			<div class="row-fluid">
+				<div class="span3">
+					<h3><%=device.name %></h3>
+				</div>
+				<div class="span6">
+					<%=device.description%>
+				</div>
+				<div class="span3">
+					<%= button_to('More info', literary_device_path(device), :class => 'btn btn-primary btn-small', :method => :get)  %>
+				</div>
+			</div>
 			<br>
 		<% end %>
 		</dl>
