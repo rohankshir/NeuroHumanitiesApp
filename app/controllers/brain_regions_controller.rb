@@ -3,7 +3,7 @@ class BrainRegionsController <ApplicationController
 		@brain_regions = BrainRegion.all
 	end
 
-	def show
+	def show()
 		@brain_region = BrainRegion.find(params[:id])
 	end
 end
