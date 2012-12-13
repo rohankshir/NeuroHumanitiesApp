@@ -1,19 +1,36 @@
 
-<div class="container-fluid">
+<div class="container-fluid" style="min-height:600px;">
   	<div class="row-fluid">
 	    <div class="span5" style="position: relative">
-				      	<div style="position: absolute; z-index:100">
-				      		<img src="/images/Lateral(left).png" class="img-rounded">
-				      	</div> 
+	    				<div style="position: relative">
+					      	<div style="position: absolute; z-index:100">
+					      		<img src="/images/Lateral(left).png" class="img-rounded">
+					      	</div> 
 
-				      	<% @brain_regions.each do |region| %>
-					      	<% if FileTest.exists?("#{Rails.root}/public/images/left_region/"+ region.id.to_s + ".png") %>
-					      		<% image_path = "/images/left_region/" + region.id.to_s + ".png"  %>
-								<div id="whatever" style="position: absolute; z-index:500" >
-									<img src=<%= image_path%> class="img-rounded">
-								</div>
+					      	<% @brain_regions.each do |region| %>
+						      	<% if FileTest.exists?("#{Rails.root}/public/images/left_region/"+ region.id.to_s + ".png") %>
+						      		<% image_path = "/images/left_region/" + region.id.to_s + ".png"  %>
+									<div id="whatever" style="position: absolute; z-index:500" >
+										<img src=<%= image_path%> class="img-rounded">
+									</div>
+								<% end %>
 							<% end %>
-						<% end %>
+						</div>
+						<div style="position: relative; padding-right: 80px; padding-top:300px">
+							<div style="position: absolute; z-index:400">
+					      		<img src="/images/Lateral(right).png" class="img-rounded">
+					      	</div> 
+					      	<% @brain_regions.each do |region| %>
+							      	<% if FileTest.exists?("#{Rails.root}/public/images/right_region/"+ region.id.to_s + ".png") %>
+							      		<% image_path = "/images/right_region/" + region.id.to_s + ".png"  %>
+										<div id="whatever" style="position: absolute; z-index:500" >
+											<img src=<%= image_path%> class="img-rounded">
+										</div>
+									<% end %>
+								<% end %>
+				      	</div>
+
+				      	
 	    </div>
 	    <div class="span7">
 		    <h2>
