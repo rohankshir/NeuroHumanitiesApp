@@ -6,7 +6,6 @@
 					      	<div style="position: absolute; z-index:100">
 					      		<img src="/images/Lateral(left).png" class="img-rounded">
 					      	</div> 
-
 					      	<% @brain_regions.each do |region| %>
 						      	<% if FileTest.exists?("#{Rails.root}/public/images/left_region/"+ region.id.to_s + ".png") %>
 						      		<% image_path = "/images/left_region/" + region.id.to_s + ".png"  %>
