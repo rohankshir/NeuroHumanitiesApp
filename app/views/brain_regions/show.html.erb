@@ -1,6 +1,8 @@
 <div class="row-fluid">
 	<div class="span3" style="position:relative; top:250px; left:50px">
+	<% if @brain_region.previous != nil %>
 	<%= button_to('Previous Region', brain_region_path(@brain_region.previous), :class => 'btn btn-primary btn-large', :method => :get)  %>
+	<% end %>
 	</div>
 	<div class="span6 pagination-centered">
 		<h3><%=@brain_region.name%><h3>
@@ -14,6 +16,8 @@
 		
 	</div>
 	<div class="span3" style="position:relative; top:250px; left:50px">
+		<% if @brain_region.next != nil %>
 		<%= button_to('Next Region', brain_region_path(@brain_region.next), :class => 'btn btn-primary btn-large', :method => :get)  %>
+		<% end %>
 	</div>
 </div>
